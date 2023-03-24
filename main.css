@@ -6,20 +6,45 @@ margin: 0px;
 }
 
 header {
-    background: linear-gradient(to right, black,red, green, yellow);
+    background: linear-gradient(to right,red, orange, yellow,green,lightblue,darkblue,purple);
     color: lightgreen;
     padding: 10px;
     font-size: 16px;
 }
-
+header:hover {
+    background: linear-gradient(to right, red, orange,yellow,green);
+    color: lightgreen;
+    padding: 1cm;
+    font-size: 1cm;
+}
+header:active {
+    background: linear-gradient(to right,black,grey,white);
+    color: white;
+    padding: 0.5cm;
+    text-align: "right";
+    font-size: 0.5cm;
+}
 footer {
-    background-color: black;
+    background: linear-gradient(to right,red, orange, yellow,green,lightblue,darkblue,purple);
     color: lightgreen;
     padding: 10px;
     text-align: "right";
     font-size: 16px;
 }
-
+footer:hover {
+    background: linear-gradient(to right,red, orange, yellow,green);
+    color: lightgreen;
+    padding: 1cm;
+    text-align: "right";
+    font-size: 1cm;
+}
+footer:active {
+    background: linear-gradient(to right,black,grey,white);
+    color: white;
+    padding: 0.5cm;
+    text-align: "right";
+    font-size: 0.5cm;
+}
 a {
     color: green; 
     text-decoration: none;
