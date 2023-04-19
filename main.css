@@ -11,12 +11,14 @@ header {
     padding: 10px;
     font-size: 16px;
 }
+
 header:hover {
     background: linear-gradient(to right, red, orange,yellow,green);
     color: lightgreen;
     padding: 1cm;
     font-size: 1cm;
 }
+
 header:active {
     background: linear-gradient(to right,black,grey,white);
     color: white;
@@ -24,6 +26,11 @@ header:active {
     text-align: "right";
     font-size: 0.5cm;
 }
+
+main {
+    padding: 10px 20px;
+}
+
 footer {
     background: linear-gradient(to right,red, orange, yellow,green,lightblue,darkblue,purple);
     color: lightgreen;
@@ -31,6 +38,7 @@ footer {
     text-align: "right";
     font-size: 16px;
 }
+
 footer:hover {
     background: linear-gradient(to right,red, orange, yellow,green);
     color: lightgreen;
@@ -38,6 +46,7 @@ footer:hover {
     text-align: "right";
     font-size: 1cm;
 }
+
 footer:active {
     background: linear-gradient(to right,black,grey,white);
     color: white;
@@ -45,6 +54,7 @@ footer:active {
     text-align: "right";
     font-size: 0.5cm;
 }
+
 a {
     color: green; 
     text-decoration: none;
