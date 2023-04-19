@@ -13,6 +13,14 @@
             let result = a + b;
             alert("Сумма " + a + " и " + b + " равна" + result);
         }
+        function ShowAutor() {
+            let autor = "Авторы страницы: \nШеповалов Артём, \nБелкин Кирилл";
+            alert(autor)
+        }
+        function ShowAutor2() {
+            let autor = "Авторы страницы: \nШеповалов Артём, \nБелкин Кирилл \nА Темергалеев Никита дуралей";
+            alert(autor)
+        }
         
     </script>
     <style>
@@ -37,16 +45,16 @@
 </head>
 
 <body>
-    <header>
+    <header onclick="ShowAutor()">
         НГТУ, ФБ, Лабораторная 5
     </header>
 
 <main>
     <div class="message" onclick="ShowSUM()">Сколько будет 5154+7891?</div>
-    <div class="message">Узнать кто авторы страницы</div>
+    <div class="message" onclick="ShowAutor()">Узнать кто авторы страницы</div>
 </main>
 
-<footer>
+<footer onclick="ShowAutor2()">
     &copy; Шеповалов Артём Сергеевич, Белкин Кирилл Витальевич, ФБИ-11 2 курс 2023
 </footer>
 
