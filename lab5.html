@@ -61,6 +61,20 @@
             output.style.backgroundColor = backColor;
             output.style.color = textColor;
         }
+        function sumRazchet() {
+            let ya = 100;
+            let g = 80;
+            let o = 150;
+            let d = 300;
+            let sumYA = parseInt(razchet1.value);
+            let sumG = parseInt(razchet2.value);
+            let sumO = parseInt(razchet3.value);
+            let sumD = parseInt(razchet4.value);
+            let total = ya+g+o+d+sumYA+sumG+sumO+sumD;
+            document.getElementById('price').innerHTML = 'Общая цена:' +total+ ' рублей';
+
+        }
+        sumRazchet();
         
     </script>
     <style>
@@ -84,6 +98,17 @@
             border: 1px solid;
             width: 300px;
             height: 40px;
+        }
+        .korzina {
+            border: 1px solid;
+            width: 400px;
+            height: 600px;
+
+        }
+        #rachet {
+            border: 1px solid;
+            width: 400px;
+            height: 600px;
         }
 
     </style>
@@ -112,7 +137,22 @@
     </div>
 
     <div id="output"></div>
+
+    <p></p>
+
+    <div class="korzina">
+        <p style= "font-size: 35px;">Корзина товаров</p>
+        Яблоки (100р/шт):<br> <input type="numberYa" id=razchet1 value="1"><br>
+        Груши (80р/шт):<br> <input type="numberG" id=razchet2 value="2"><br>
+        Апельсины (150р/шт):<br> <input type="numberO" id=razchet3 value="3"><br>
+        Дыни (300р/шт):<br> <input type="numberD" id=razchet4 value="4"><br>
+        <input type="button" value="Расчитать" onclick="sumRazchet()">
+    <div id="price"></div>
+    </div>
+
+
 </main>
+    
 
 <footer onclick="ShowAutor2()">
     &copy; Шеповалов Артём Сергеевич, Белкин Кирилл Витальевич, ФБИ-11 2 курс 2023
