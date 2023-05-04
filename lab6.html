@@ -4,43 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Шеповалов Артём, Белкин Кирилл. Лабораторная 6</title>
+    <title>Темергалеев Никита Алексеевич. Лабораторная работа 6</title>
     <link rel="stylesheet" href="main.css">
 </head>
     <style>
-        .game {
-            border: solid;
-            border-color: green;
-            border-radius: 20px;
-            margin: 20px 450px;
-            padding: 8px;
-            text-align: center;
-            
+        .help {
+            border: 3px white solid;
+            border-radius: 30px;
+            width: 475px;
+            margin-left: 709px;
+            margin-bottom: 30px;
+            height: 23px;
+            padding: 6px;
+            background-color:white;
+            padding-left: 9px;
         }
 
-        .rule {
-            border: solid;
-            border-color: aliceblue;
-            border-radius: 30px;
-            background-color: azure;
-            margin: 30px 350px;
-            padding: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 13px;
-            text-align: left;
+        .game {
+            border: 10px red solid;
+            border-radius: 50px;
+            height: 216px;
+            width: 350px;
+            margin: 30px auto;
+            padding: 8px;
+            text-align: center;
         }
 
         .color {
-            border: solid;
-            border-color: black;
-            color: rgb(25, 0, 255);
-            height: 100px;
-            width: 180px;
+            border: 3px gray solid;
+            width: 203px;
+            height: 71px;
+            color: white;
             text-align: center;
-            padding: 30px 0px 0px 0px;
+            margin: 35px;
+            padding: 8px;
+            padding-bottom: 0px;
         }
 
-        .blockFlex {
+        .movingBlock {
             display: flex;
             width: 150px;
             height: 150px;
@@ -53,134 +54,169 @@
             transition: 3s;
         }
 
-        .blockFlex:hover {
+        .movingBlock:hover {
+            cursor: pointer;
+        }
+        #block2 {
+            border: 3px gray solid;
+            width: 100px;
+            height: 71px;
+            color: white;
+            text-align: center;
+            margin: 35px;
+            padding: 8px;
+            background-color: lightcoral;
+            padding-bottom: 0px;
+            transition: 1s;
+        }
+        #block2:hover {
             cursor: pointer;
         }
 
     </style>
+
     <script>
         let number;
         let count = 0;
         function startGame() {
-            number = Math.floor( Math.random() * 100 ) + 1;
-            let screens = document.getElementsByClassName("game");
-            screens[0].style.display = "none";
-            screens[1].style.display = "block";
+            number = Math.floor(Math.random() * 100) + 1;
+            let screens = document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
         }
+
         function guess() {
             count++;
-            let input = document.getElementById("user-number");
-            let UserNumber = parseInt(input.value);
-            let message = document.getElementById("result");
-            if (UserNumber > number) {
-                message.innerHTML = "Вы ввели слишком большое число";
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+            let message = document.getElementById('result');
+            if (userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
             }
-            else if (UserNumber < number) {
-                message.innerHTML = "Вы ввели слишком маленькое число";
-            }
-            else {
-                let screens = document.getElementsByClassName("game");
-                screens[1].style.display = "none";
-                screens[2].style.display = "block";
-                document.getElementById("number").innerHTML = number;
-                document.getElementById("try-count").innerHTML = count;
-                
-            if (100<UserNumber) {
-                message.innerHTML = "Вы ввели запретное число, теперь за вами будет вестись слежка, пожалуйста не допускайте больше столь опрометчивых действий"
-            }
-            else if (1>UserNumber) {
-                message.innerHTML = "Вы ввели запретное число, теперь за вами будет вестись слежка, пожалуйста не допускайте больше столь опрометчивых действий"
-            }
-            }
-
-        }
-        function again() { 
-            let screens = document.getElementsByClassName("game");
-            screens[2].style.display = "none";
-            screens[1].style.display = "block";
-            count = 0;
-            number = Math.floor( Math.random() * 100 ) + 1;
-        }
-
-        function rules() {
-            let screens = document.getElementsByClassName("rule");
-            screens[0].style.display = "none";
-            screens[1].style.display = "block"; 
-        }
-
-        function closerules() {
-            let screens = document.getElementsByClassName("rule");
-            screens[1].style.display = "none";
-            screens[0].style.display = "block"; 
-        }
-
-        function Changecolor(div) {
-            if(div.style.backgroundColor == "yellow") {
-                div.style.backgroundColor = "red";
-                div.style.color = "black"
-                document.getElementById("color-name").innerHTML = "красный";
-            }
-            else if(div.style.backgroundColor == "red") {
-                div.style.backgroundColor = "black";
-                div.style.color = "red"
-                document.getElementById("color-name").innerHTML = "чёрный";
-            }
-            else if(div.style.backgroundColor == "black") {
-                div.style.backgroundColor = "green";
-                div.style.color = "white"
-                document.getElementById("color-name").innerHTML = "зелёный";
-            }
-             else if(div.style.backgroundColor == "green") {
-                div.style.backgroundColor = "orange";
-                div.style.color = "blue"
-                document.getElementById("color-name").innerHTML = "оранжевый";
+            else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
             }
             else {
-                div.style.backgroundColor = "yellow";
-                div.style.color = "green"
-                document.getElementById("color-name").innerHTML = "жёлтый";
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;
+            }
+            if (100 < userNumber) {
+                message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
+            }
+            else if (1 > userNumber) {
+                message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
+            }
+            else if (count > 5) {
+            screens = document.getElementsByClassName('game');
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'none';
+            screens[3].style.display = 'block';
             }
         }
-            let positionLeft = true;
+
+        function again(params) {
+             screens = document.getElementsByClassName('game');
+                screens[2].style.display = 'none';
+                screens[1].style.display = 'block';
+                screens[3].style.display = 'none';
+                count = 0;
+                number = Math.floor(Math.random() * 100) + 1;
+        }
+
+        function showHelp() {
+            let divHelp = document.getElementsByClassName('help');
+            divHelp[0].style.display='none';
+            divHelp[1].style.display='block';
+        }
+
+        function closeHelp() {
+            divHelp = document.getElementsByClassName('help');
+            divHelp[1].style.display='none';
+            divHelp[0].style.display='block';
+        }
+
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'red';
+                div.style.color = 'orange';
+                document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if (div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'черный';
+            }
+            else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'white';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'белый';
+            }
+            else if (div.style.backgroundColor == 'white') {
+                div.style.backgroundColor = 'blue';
+                div.style.color = 'yellow';
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                div.style.color = 'green';
+                document.getElementById('color-name').innerHTML = 'желтый';
+            }
+        }
+
+        let positionLeft = true;
         function move() {
             let position = document.getElementById('block');
             if (positionLeft == true) {
-            position.style.left = '500px';
-            positionLeft = false;
+                position.style.transform = 'translateX(1000px) rotate(0)';
+                positionLeft = false;
             }
             else {
-            position.style.left = '0px';
-            positionLeft = true;
+                position.style.transform = 'translateX(0px) rotate(4turn)';
+                positionLeft = true;
             }
+        }
+
+        let widthbig = 100
+        function big() {
+            let block2 = document.getElementById('block2');
+            let sizeWidth = parseInt(block2.style.width);
+        if (sizeWidth < 1000) {
+            sizeWidth += 50;
+            }
+        else {
+            sizeWidth = 100;
+            }
+        block2.style.width = sizeWidth + 'px';
         }
     </script>
 
 <body>
     <header>
-        НГТУ, ФБ, Лабораторная 6
+            НГТУ, ФБ, Лабораторная работа 6
     </header>
-    
-    <main>
-        <marquee  style="color: #0741ff; font-size: 40px; font-weight: bolder; line-height: 150%;">Сыграйте в игру "Угадай число!"</marquee>
 
-        <div class="game">
+    <main>
+        <div class="game" style="height: 20px; padding-top: 6px; width: 120px">
             <button onclick="startGame()">
                 Сыграть в игру
             </button>
         </div>
-        
-        <div class="game" style="display: none;">
+
+        <div class="game" style="display:none">
             <h1>Угадай число!</h1>
             <div>
-                Задумано число от 1 до 100. Угадайте какое?<br>
-                <input type="number" value="0" min="1" max="100" id="user-number"><br>
+                Задумано число от 1 до 100. Угадайте, какое?<br><br>
+                <input type="number" value="0" min="1" max="100" id="user-number"><br><br>
                 <button onclick="guess()">Угадать</button>
                 <div id="result"></div>
             </div>
         </div>
 
-        <div class="game" style="display: none;">
-            <h1>Поздравляем, вы выйграли!</h1>
+        <div class="game" style="display:none">
+            <h1>Поздравляем, вы победили!</h1>
             <div>
                 Задуманное число: <span id="number"></span>
             </div>
@@ -188,42 +224,51 @@
                 Количество попыток: <span id="try-count"></span>
             </div>
             <div>
-                <button onclick="again()">Сыграть ещё раз</button>
+                <button onclick="again()">Сыграть еще раз</button>
             </div>
         </div>
 
-        <div class="rule">
-            <button onclick="rules()" style="border-radius: 10px;">
-                Показать правила игры
-            </button>
+        <div class="game" style="display:none">
+            <h1>Вы проиграли!</h1>
+            <button onclick="again()">попытаться снова</button>
+        </div>
+        <br>
+        <br>
+        <div class="help">
+            <button onclick="showHelp()">Показать правила игры</button>
         </div>
 
-        <div class="rule" style="display: none;">
-            <button onclick="closerules()" style="border-radius: 10px;">
-                Скрыть правила игры
-            </button>
+        <div class="help" style="display: none; height: 265px; color:black">
+            <button onclick="closeHelp()">Cкрыть правила игры</button>
+            <br>
             <ol type="A">
                 <li>Сначала нажмите на кнопку "Сыграть в игру"</li>
                 <li>Помолитесь богу</li>
-                <li>Если вы не угадаете с 10 раз, то вас ждёт высший суд</li>
+                <li>Если вы не угадаете с 6 раз, то вас ждёт высший суд</li>
                 <li>Надеюсь мне не нужно повторять вам, что такое безумие?(Не вводите число несколько раз, если оно не подходит)</li>
                 <li>Повеселитесь!</li>
             </ol>
         </div>
 
-        <div class="color" ondblclick="Changecolor(this)">
-            Цвет: <span id="color-name">Не установлен</span><br>
-            Сделайте двойной щелчок чтобы сменить.
-        </div><br>
-
-        <div class="blockFlex" id="block" oneclick="move()">
-            Нажми на меня если смелый
+        <div class="color" ondblclick="changeColor(this)" style="cursor: pointer">
+            Цвет: <span id="color-name">прозрачный</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
         </div>
+        <br>
+        <br>
 
+        <div class="movingBlock" id="block" onclick="move()">
+            тыкни если ты адекватный
+        </div>
+        <div id="block2" onclick="big()">
+        тыкни на меня, что бы я стал шире</div>
+        <br>
+        <br>
     </main>
 
     <footer>
-        &copy; Шеповалов Артём, Белкин Кирилл, ФБИ-11, 2 курс, 2023
+        &copy; Темергалеев Никита, ФБИ-11, 2 курс, 2023
     </footer>
+
 </body>
 </html>
