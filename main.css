@@ -27,10 +27,6 @@ header:active {
     font-size: 0.5cm;
 }
 
-main {
-    padding: 10px 20px;
-}
-
 footer {
     background: linear-gradient(to right,red, orange, yellow,green,lightblue,darkblue,purple);
     color: lightgreen;

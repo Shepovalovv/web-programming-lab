@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Шеповалов Артём, Белкин Кирилл. Лабораторная 6</title>
     <link rel="stylesheet" href="main.css">
+</head>
     <style>
         .game {
             border: solid;
@@ -39,22 +40,20 @@
             padding: 30px 0px 0px 0px;
         }
 
-        .BlockFlex {
-            border: solid; color: black;
+        .blockFlex {
             display: flex;
             width: 150px;
             height: 150px;
-            text-align: center;
+            border: 5px white solid;
             align-items: center;
+            justify-content: center;
             position: relative;
-            left: -20px;
-            background-color: black;
-            color: red;
-            transition: 1s;
-            
+            background-color: pink;
+            color: black;
+            transition: 3s;
         }
 
-        .BlockFlex:hover {
+        .blockFlex:hover {
             cursor: pointer;
         }
 
@@ -142,9 +141,19 @@
                 document.getElementById("color-name").innerHTML = "жёлтый";
             }
         }
-
+            let positionLeft = true;
+        function move() {
+            let position = document.getElementById('block');
+            if (positionLeft == true) {
+            position.style.left = '500px';
+            positionLeft = false;
+            }
+            else {
+            position.style.left = '0px';
+            positionLeft = true;
+            }
+        }
     </script>
-</head>
 
 <body>
     <header>
@@ -207,7 +216,7 @@
             Сделайте двойной щелчок чтобы сменить.
         </div><br>
 
-        <div class="BlockFlex">
+        <div class="blockFlex" id="block" oneclick="move()">
             Нажми на меня если смелый
         </div>
 
