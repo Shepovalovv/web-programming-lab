@@ -37,8 +37,32 @@
             width: 180px;
             text-align: center;
             padding: 30px 0px 0px 0px;
-
         }
+
+        .BlockFlex {
+            border: solid; color: black;
+            display: flex;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            align-items: center;
+            position: relative;
+            left: -20px;
+            background-color: black;
+            color: red;
+            transition: 1s;
+            
+        }
+
+        .BlockFlex:hover {
+            cursor: pointer;
+        }
+
+        .BlockFlex:focus {
+            left: 1250px;
+            
+        }
+
     </style>
     <script>
         let number;
@@ -123,6 +147,7 @@
                 document.getElementById("color-name").innerHTML = "жёлтый";
             }
         }
+
     </script>
 </head>
 
@@ -132,6 +157,8 @@
     </header>
     
     <main>
+        <marquee  style="color: #0741ff; font-size: 40px; font-weight: bolder; line-height: 150%;">Сыграйте в игру "Угадай число!"</marquee>
+
         <div class="game">
             <button onclick="startGame()">
                 Сыграть в игру
@@ -166,6 +193,7 @@
                 Показать правила игры
             </button>
         </div>
+
         <div class="rule" style="display: none;">
             <button onclick="closerules()" style="border-radius: 10px;">
                 Скрыть правила игры
@@ -178,10 +206,16 @@
                 <li>Повеселитесь!</li>
             </ol>
         </div>
+
         <div class="color" ondblclick="Changecolor(this)">
             Цвет: <span id="color-name">Не установлен</span><br>
             Сделайте двойной щелчок чтобы сменить.
+        </div><br>
+
+        <div class="BlockFlex" tabindex="1">
+            Нажми на меня если смелый
         </div>
+
     </main>
 
     <footer>
