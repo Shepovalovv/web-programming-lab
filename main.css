@@ -1,12 +1,12 @@
 body {
-background-color: black;
+background-color: rgb(23, 0, 36);
 color: lightgreen;
 font-family: Arial;
 margin: 0px;
 }
 
 header {
-    background: linear-gradient(rgb(95, 2, 2), rgb(163, 107, 2), rgb(155, 155, 0),rgb(0, 83, 0),rgb(120, 161, 175),rgb(1, 1, 95),rgb(87, 1, 87));
+    background: linear-gradient(rgb(192, 5, 5), rgb(230, 151, 4), rgb(194, 194, 5),rgb(2, 116, 2),rgb(9, 184, 243),rgb(2, 2, 156),rgb(110, 1, 110));
     color: lightgreen;
     padding: 10px;
     font-size: 16px;
@@ -28,7 +28,7 @@ header:active {
 }
 
 footer {
-    background: linear-gradient(rgb(95, 2, 2), rgb(163, 107, 2), rgb(155, 155, 0),rgb(0, 83, 0),rgb(120, 161, 175),rgb(1, 1, 95),rgb(87, 1, 87));
+    background: linear-gradient(rgb(192, 5, 5), rgb(230, 151, 4), rgb(194, 194, 5),rgb(2, 116, 2),rgb(9, 184, 243),rgb(2, 2, 156),rgb(110, 1, 110));
     color: lightgreen;
     padding: 10px;
     text-align: "right";
