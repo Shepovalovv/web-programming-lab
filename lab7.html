@@ -78,6 +78,41 @@
                 t.appendChild(z)
             }
         }
+
+        function kursValut() {
+            let kurs = [70.16, 69.98, 68.82, 68.00, 68.04,
+                        68.00, 67.60, 67.78, 68.22, 68.46]
+            let data = ["27.04.2023", "28.04.2023", "02.05.2023", "03.05.2023", "04.05.2023",
+                        "05.05.2023", "08.05.2023", "10.05.2023", "11.05.2023", "12.05.2023"];
+            let dif = ["-", kurs[1]-kurs[0], kurs[2]-kurs[1], kurs[3]-kurs[2], kurs[4]-kurs[3],
+                            kurs[5]-kurs[4], kurs[6]-kurs[5], kurs[7]-kurs[6], kurs[8]-kurs[7],
+                            kurs[9]-kurs[8], kurs[10]-kurs[9]];
+            let table = document.getElementById("tableValut")
+            for(let i = 0; i < kurs.length; i++) {
+                let tr = document.createElement("tr");
+                let td1 = document.createElement("td");
+                let td2 = document.createElement("td");
+                let td3 = document.createElement("td");
+                td1.innerHTML = kurs[i];
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                td2.innerHTML = data[i];
+                td3.innerHTML = dif[i];
+                table.appendChild(tr);
+            }
+            let sum = 0;
+            let average = document.getElementById("average");
+            let max = document.getElementById("max");
+            let min = document.getElementById("min");
+            for(i = 0; i < kurs.length; i++) {
+                sum = sum + kurs[i];
+            }
+            let sumAll = sum / kurs.length;
+            average.innerHTML = "Среднее значение: " + sumAll;
+            max.innerHTML = "Максимальное значение: " + Math.max.apply(0, kurs);
+            min.innerHTML = "Минимальное значение: " + Math.min.apply(0, kurs);
+        }
     </script>
 </head>
 
@@ -102,6 +137,13 @@
 
         <button onclick="umnojenie()">Таблица умножения на 44</button>
         <div id="table"></div>
+
+        <button onclick="kursValut()">Курс Акций "Детский Мир"</button>
+        <table border="1" id="tableValut"></table>
+        <div id="detailValut"></div>
+        <div id="average"></div>
+        <div id="max"></div>
+        <div id="min"></div>
     </main>
     <footer>
         &copy; Шеповалов А.С. ФБИ-11, 2 курс, 2023
