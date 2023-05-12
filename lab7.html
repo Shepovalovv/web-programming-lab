@@ -70,6 +70,14 @@
             }
         }
 
+        function umnojenie() {
+            let t = document.getElementById("table");
+            for(let i = 13; i <= 33; i++) {
+                let z = document.createElement("div");
+                z.innerHTML = i + "* 44 = " + i*44;
+                t.appendChild(z)
+            }
+        }
     </script>
 </head>
 
@@ -92,6 +100,8 @@
         <button onclick="BlueAndDark()">Белое/Чёрное</button>
         <div id="divchick"></div>
 
+        <button onclick="umnojenie()">Таблица умножения на 44</button>
+        <div id="table"></div>
     </main>
     <footer>
         &copy; Шеповалов А.С. ФБИ-11, 2 курс, 2023
